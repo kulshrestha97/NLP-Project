@@ -1,0 +1,39 @@
+#!/bin/bash
+printf "Saving Text: Shut up この野郎 as...\n"
+
+printf "\nASCII"
+touch ASCII.txt
+echo "Shut up この野郎" > ASCII.txt
+iconv -f utf8 -t ascii ASCII.txt
+
+printf "\nSaved Data: "
+cat ASCII.txt
+
+printf "\nData size: "
+stat --printf="%s\n" ASCII.txt
+
+echo "--------------"
+
+printf "\UTF-16 (Windows Unicode)"
+touch Unicode.txt
+echo "Shut up この野郎" > Unicode.txt
+iconv -f utf8 -t unicode Unicode.txt
+
+printf "\nSaved Data: "
+cat Unicode.txt
+
+printf "\nData size: "
+stat --printf="%s\n" Unicode.txt
+
+echo "--------------"
+
+printf "\nUTF-8"
+touch UTF-8.txt
+echo "Shut up この野郎" > UTF-8.txt
+printf "\nSaved Data: "
+cat UTF-8.txt
+
+printf "\nData size: "
+stat --printf="%s\n" UTF-8.txt
+
+echo "--------------"
