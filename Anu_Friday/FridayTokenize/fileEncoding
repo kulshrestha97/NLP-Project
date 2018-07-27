@@ -1,37 +1,46 @@
 #!/bin/bash
 printf "Saving Text: Shut up この野郎 as...\n"
+sleep .5
 
 printf "\nASCII"
+sleep .5
 touch ASCII.txt
 echo "Shut up この野郎" > ASCII.txt
-iconv -f utf8 -t ascii ASCII.txt
+echo `iconv -c -f utf8 -t ascii//TRANSLIT ASCII.txt` > ASCII.txt
 
 printf "\nSaved Data: "
 cat ASCII.txt
+sleep .5
 
 printf "\nData size: "
 stat --printf="%s\n" ASCII.txt
 
+sleep 1
 echo "--------------"
-
-printf "\UTF-16 (Windows Unicode)"
+sleep .5
+printf "\nISO-2022-JP"
+sleep .5
 touch Unicode.txt
 echo "Shut up この野郎" > Unicode.txt
-iconv -f utf8 -t unicode Unicode.txt
+echo `iconv -c -f utf8 -t ISO-2022-JP//TRANSLIT Unicode.txt` > Unicode.txt
 
 printf "\nSaved Data: "
 cat Unicode.txt
+sleep .5
 
 printf "\nData size: "
 stat --printf="%s\n" Unicode.txt
 
+sleep 1
 echo "--------------"
-
+sleep .5
 printf "\nUTF-8"
+sleep .5
 touch UTF-8.txt
 echo "Shut up この野郎" > UTF-8.txt
 printf "\nSaved Data: "
 cat UTF-8.txt
+sleep .5
 
 printf "\nData size: "
 stat --printf="%s\n" UTF-8.txt
