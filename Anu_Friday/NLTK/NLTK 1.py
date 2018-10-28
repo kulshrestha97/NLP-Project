@@ -17,7 +17,7 @@ class col:
 print(col.HEADER+"\nExploring Brown Corpus\n~~~~~~~~~~~~~~~~~~~~~~~~~\n"+col.ENDC)
 print(col.OKGREEN+"Categories : "+col.ENDC)
 print(brown.categories())
-print(col.BOLD+"\nChoosing category \"Cotton\": \n"+col.ENDC)
+print(col.BOLD+"\nChoosing category \"News\": \n"+col.ENDC)
 print(col.OKGREEN+"\nText (First 200 words): "+col.ENDC)
 print(" ".join(brown.words(categories="news")[:200]))
 
